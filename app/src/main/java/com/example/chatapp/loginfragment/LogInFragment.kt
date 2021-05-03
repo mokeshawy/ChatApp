@@ -23,9 +23,15 @@ class LogInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // connect with view model
         binding.lifecycleOwner  = this
         binding.logInVarModel   = logInViewModel
 
+        // fun log in user
+        logInViewModel.logIn(requireActivity() , view , binding.btnSignIn)
+
+        // fun go register page
+        logInViewModel.goRegisterPage(view , binding.tvRegisterNewAccount)
 
     }
 }

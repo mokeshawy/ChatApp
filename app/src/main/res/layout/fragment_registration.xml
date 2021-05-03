@@ -44,6 +44,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/enter_name"
+                        android:textColor="@color/colorSecondaryText"
                         android:inputType="text"
                         android:text="@={registrationVarModel.etEnterName}"/>
 
@@ -64,6 +65,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/enter_email"
+                        android:textColor="@color/colorSecondaryText"
                         android:inputType="textEmailAddress"
                         android:text="@={registrationVarModel.etEnterEmail}" />
 
@@ -84,6 +86,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/enter_password"
+                        android:textColor="@color/colorSecondaryText"
                         android:inputType="textPassword"
                         android:text="@={registrationVarModel.etEnterPassword}"/>
 
@@ -104,6 +107,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/enter_confirm_password"
+                        android:textColor="@color/colorSecondaryText"
                         android:inputType="textPassword"
                         android:text="@={registrationVarModel.etEnterConfirmPassword}"/>
 

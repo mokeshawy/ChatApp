@@ -42,7 +42,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/enter_email"
-                        android:inputType="textEmailAddress" />
+                        android:textColor="@color/colorSecondaryText"
+                        android:inputType="textEmailAddress"
+                        android:text="@={logInVarModel.etEnterEmail}"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -61,7 +63,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/enter_password"
-                        android:inputType="textPassword" />
+                        android:textColor="@color/colorSecondaryText"
+                        android:inputType="textPassword"
+                        android:text="@={logInVarModel.etEnterPassword}"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,6 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/forget_password"
+                    android:textColor="@color/colorSecondaryText"
                     app:layout_constraintBottom_toTopOf="@+id/btn_sign_in"
                     app:layout_constraintEnd_toEndOf="@+id/input_enter_password"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -120,7 +125,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/don_t_have_an_account" />
+                        android:text="@string/don_t_have_an_account"
+                        android:textColor="@color/colorSecondaryText"/>
 
                     <TextView
                         android:id="@+id/tv_register_new_account"
@@ -128,6 +134,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="2dp"
                         android:text="@string/register"
+                        android:textColor="@color/colorSecondaryText"
                         android:textStyle="bold" />
                 </LinearLayout>
 
