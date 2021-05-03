@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">ChatApp</string>
+
+
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_confirm_password">Enter Confirm Password</string>
+    <string name="text_view_sign_up">Sign Up</string>
+
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="btn_sign_in">Sign In</string>
+
+
+    <!-- Message validate input register new account -->
+    <string name="err_msg_please_enter_your_name">Please enter your name</string>
+    <string name="err_msg_please_enter_your_email">Please enter your email</string>
+    <string name="err_msg_please_enter_your_password">Please enter your password</string>
+    <string name="err_msg_the_password_is_not_less_than">the password is not less than 6 number</string>
+    <string name="err_msg_please_enter_confirm_password">Please enter your confirm password </string>
+    <string name="err_msg_password_and_confirm_password_not_mismatch">Password and confirm password not mismatch</string>
+    <string name="msg_create_account_successful">Yore account has bin created and send message for confirm</string>
+
+
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="et_input_register_width_size">370dp</dimen>
+
+    <dimen name="text_view_sign_up_text_size">20sp</dimen>
+
+    <dimen name="btn_register_page_width">130dp</dimen>
+    <dimen name="btn_register_page_height">40dp</dimen>
+    <dimen name="button_background_radius">10dp</dimen>
+
+
+</resources>
