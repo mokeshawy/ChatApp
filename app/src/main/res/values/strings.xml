@@ -22,5 +22,15 @@
     <string name="msg_create_account_successful">Yore account has bin created and send message for confirm</string>
 
 
+    <!-- string for log in page -->
+    <string name="text_view_sign_in">Sign In</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="register"><u>Register</u></string>
+    <string name="forget_password">Forget Password?</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

@@ -56,7 +56,7 @@ class RegistrationViewModel : ViewModel() {
                     accountReference.push().setValue(map).addOnCompleteListener { setValue ->
                         if(setValue.isSuccessful){
                             Snackbar.make(view , context.getString(R.string.msg_create_account_successful),Snackbar.LENGTH_SHORT).show()
-                            Navigation.findNavController(view).navigate(R.id.action_regisrtationFragment_to_homeFragment)
+                            Navigation.findNavController(view).navigate(R.id.action_regisrtationFragment_to_logInFragment)
                         }else{
                             Snackbar.make(view , it.exception!!.message.toString(), Snackbar.LENGTH_SHORT).show()
                         }

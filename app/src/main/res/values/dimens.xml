@@ -9,5 +9,7 @@
     <dimen name="btn_register_page_height">40dp</dimen>
     <dimen name="button_background_radius">10dp</dimen>
 
+    <dimen name="btn_login_page_width">250dp</dimen>
+
 
 </resources>
