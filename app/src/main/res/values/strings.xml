@@ -30,10 +30,14 @@
     <string name="msg_welcome_user_login">Welcome</string>
     <string name="err_msg_confirm_email">Please confirm your email</string>
 
+    <!--User page -->
+    <string name="label_message">Message</string>
+
+    <!-- Profile page-->
+    <string name="label_profile">Profile</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
 
 </resources>

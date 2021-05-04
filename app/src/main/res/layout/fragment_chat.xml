@@ -4,14 +4,14 @@
 
     <data>
         <variable
-            name="homeVarModel"
-            type="com.example.chatapp.homefragment.HomeViewModel" />
+            name="chatVarModel"
+            type="com.example.chatapp.chatfragment.ChatViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".homefragment.HomeFragment">
+        tools:context=".chatfragment.ChatFragment">
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

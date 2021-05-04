@@ -11,5 +11,8 @@
 
     <dimen name="btn_login_page_width">250dp</dimen>
 
+    <dimen name="grey_border_stroke_size">1dp</dimen>
+    <dimen name="grey_border_radius">7dp</dimen>
+
 
 </resources>

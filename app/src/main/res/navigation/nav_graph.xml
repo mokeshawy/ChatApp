@@ -25,13 +25,19 @@
             android:id="@+id/action_regisrtationFragment_to_logInFragment"
             app:destination="@id/logInFragment"
             app:enterAnim="@android:anim/fade_out"
-            app:popUpTo="@id/logInFragment" />
+            app:popUpTo="@id/nav_graph" />
     </fragment>
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.chatapp.homefragment.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/profileFragment"
+        android:name="com.example.chatapp.profilefragment.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_usersFragment"
+            app:destination="@id/usersFragment"
+            app:enterAnim="@android:anim/fade_out"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
     <fragment
         android:id="@+id/logInFragment"
         android:name="com.example.chatapp.loginfragment.LogInFragment"
@@ -42,8 +48,23 @@
             app:destination="@id/regisrtationFragment"
             app:enterAnim="@android:anim/fade_in" />
         <action
-            android:id="@+id/action_logInFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
+            android:id="@+id/action_logInFragment_to_usersFragment"
+            app:destination="@id/usersFragment"
             app:enterAnim="@android:anim/fade_in" />
     </fragment>
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.example.chatapp.usersfragment.UsersFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_users" >
+        <action
+            android:id="@+id/action_usersFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.chatapp.chatfragment.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
 </navigation>

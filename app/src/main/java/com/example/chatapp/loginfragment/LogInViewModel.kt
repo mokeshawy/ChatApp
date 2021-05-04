@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.chatapp.R
+import com.example.chatapp.util.Constants
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 
@@ -21,6 +22,12 @@ class LogInViewModel : ViewModel(){
     // function operation for log in
     fun logIn( context : Context , view : View , btn_log_in : Button){
 
+        // check if user log in then navigate to user screen
+//        if( Constants.getCurrentUser() !=null){
+//            Navigation.findNavController(view).navigate(R.id.action_logInFragment_to_usersFragment)
+//        }
+
+        // button log in
         btn_log_in.setOnClickListener {
             // Validate input for entry data from user log in
             if (etEnterEmail.value!!.trim().isEmpty()) {
@@ -35,7 +42,7 @@ class LogInViewModel : ViewModel(){
                         if (firebaseAuth.currentUser?.isEmailVerified!!) {
 
                             Snackbar.make(view, context.getString(R.string.msg_welcome_user_login), Snackbar.LENGTH_SHORT).show()
-                            Navigation.findNavController(view).navigate(R.id.action_logInFragment_to_homeFragment)
+                            Navigation.findNavController(view).navigate(R.id.action_logInFragment_to_usersFragment)
                         } else {
                             Snackbar.make(view, context.getText(R.string.err_msg_confirm_email), Snackbar.LENGTH_SHORT).show()
                         }

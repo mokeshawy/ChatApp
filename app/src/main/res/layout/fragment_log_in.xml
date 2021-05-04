@@ -107,7 +107,7 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/input_enter_password"
                     app:layout_constraintTop_toBottomOf="@+id/input_enter_password"
-                    app:layout_constraintVertical_bias="0.12" />
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
