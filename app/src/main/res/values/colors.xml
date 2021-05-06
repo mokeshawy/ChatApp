@@ -12,4 +12,7 @@
     <color name="colorSecondaryText">#989898</color>
     <color name="colorDarkGrey">#878787</color>
 
+    <color name="colorItemLeft">#D9D8D8</color>
+    <color name="colorItemRight">#0E61D4</color>
+
 </resources>

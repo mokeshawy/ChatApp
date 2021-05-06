@@ -8,12 +8,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.chatapp.R
+import com.example.chatapp.firebase.FirebaseService
 import com.example.chatapp.model.UserModel
 import com.example.chatapp.util.Constants
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.messaging.FirebaseMessagingService
 import com.squareup.picasso.Picasso
 
 class UsersViewModel : ViewModel(){
@@ -28,6 +31,8 @@ class UsersViewModel : ViewModel(){
 
     //fun get data for users for database
     fun getUser( context: Context , iv_user_image_profile : ImageView){
+
+        FirebaseMessaging.getInstance().subscribeToTopic("topics${Constants.getCurrentUser()}")
 
         userReference.addValueEventListener( object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {

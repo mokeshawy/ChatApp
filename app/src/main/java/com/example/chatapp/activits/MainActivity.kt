@@ -22,7 +22,11 @@ class MainActivity : AppCompatActivity() {
         val navController   : NavController     = navHostFragment.navController
 
         // Operation work for action bar for page
-        var appBarConfiguration = AppBarConfiguration(setOf(R.id.regisrtationFragment , R.id.logInFragment , R.id.profileFragment, R.id.usersFragment))
+        var appBarConfiguration = AppBarConfiguration(setOf(R.id.regisrtationFragment ,
+            R.id.logInFragment ,
+            R.id.profileFragment,
+            R.id.usersFragment ,
+            R.id.chatFragment))
         setupActionBarWithNavController(navController , appBarConfiguration)
 
         // operation for hide and show action bar on page
@@ -32,6 +36,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.splashFragment     ->supportActionBar!!.hide()
                 R.id.usersFragment      ->supportActionBar!!.hide()
                 R.id.profileFragment    ->supportActionBar!!.hide()
+                R.id.chatFragment       ->supportActionBar!!.hide()
 
                 else -> supportActionBar!!.show()
             }

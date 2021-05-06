@@ -61,10 +61,22 @@
             android:id="@+id/action_usersFragment_to_profileFragment"
             app:destination="@id/profileFragment"
             app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_usersFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
     </fragment>
     <fragment
         android:id="@+id/chatFragment"
         android:name="com.example.chatapp.chatfragment.ChatFragment"
-        android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" />
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat" >
+        <argument
+            android:name="userObject"
+            app:argType="com.example.chatapp.model.UserModel" />
+        <action
+            android:id="@+id/action_chatFragment_to_usersFragment"
+            app:destination="@id/usersFragment"
+            app:enterAnim="@android:anim/fade_out"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
 </navigation>
