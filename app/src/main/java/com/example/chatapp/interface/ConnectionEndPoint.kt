@@ -11,10 +11,8 @@ import retrofit2.http.POST
 
 interface ConnectionEndPoint {
 
-    @Headers("Authorization : key =${Constants.SERVICE_KEY}" , "ContentType : ${Constants.CONTENT_TYPE}")
+    @Headers("Authorization: key=${Constants.SERVICE_KEY}","ContentType:${Constants.CONTENT_TYPE}")
     @POST("fcm/send ")
-    suspend fun postNotification(
-        @Body notification : PushNotificationModel
-    ) : Response<ResponseBody>
+    suspend fun postNotification( @Body notification : PushNotificationModel ) : Response<ResponseBody>
 
 }

@@ -20,6 +20,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class ChatViewModel : ViewModel(){
@@ -31,7 +32,7 @@ class ChatViewModel : ViewModel(){
     var topic = ""
     private val firebaseDatabase = FirebaseDatabase.getInstance()
     private val chatReference = firebaseDatabase.getReference(Constants.CHAT_REFERENCE)
-    private val firebaseAuth = FirebaseAuth.getInstance()
+
     // fun send message
     fun sendMessage(context : Context , receiveUserId : String , view : View , et_message : EditText , userName : String ){
 
@@ -82,19 +83,16 @@ class ChatViewModel : ViewModel(){
     }
 
     // fun notification
-    fun sendNotification( notification : PushNotificationModel , context: Context){
+    private fun sendNotification( notification : PushNotificationModel , context: Context){
 
-        CoroutineScope(Dispatchers.Main).launch {
-
-            try{
-                val response = ServiceBuilder.makeRetrofit().postNotification(notification)
+        CoroutineScope(Dispatchers.IO).async {
+            val response = ServiceBuilder.makeRetrofit().postNotification(notification)
+            CoroutineScope(Dispatchers.Main).async {
                 if(response.isSuccessful){
-                    Toast.makeText( context , "Response${Gson().toJson(response)}" , Toast.LENGTH_SHORT).show()
+                    Toast.makeText( context , "Response ${Gson().toJson(response)}" , Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText( context , response.message().toString() , Toast.LENGTH_SHORT).show()
                 }
-            }catch(e:Exception){
-                Toast.makeText( context , e.message.toString() , Toast.LENGTH_SHORT).show()
             }
         }
     }
