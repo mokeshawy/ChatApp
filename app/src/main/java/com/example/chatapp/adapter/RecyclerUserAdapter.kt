@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.chatapp.R
 import com.example.chatapp.`interface`.OnClick
 import com.example.chatapp.databinding.ItemListUsersBinding
 import com.example.chatapp.model.UserModel
@@ -31,7 +32,15 @@ class RecyclerUserAdapter(private val dataSet: ArrayList<UserModel> , var onClic
         // contents of the view with that element
 
         viewHolder.binding.tvUserName.text = dataSet[position].userName
-        Picasso.get().load(dataSet[position].profileImage).into(viewHolder.binding.ivUserImage)
+
+        // when user not select image profile will show default image
+        if( dataSet[position].profileImage == ""){
+            viewHolder.binding.ivUserImage.setImageResource(R.drawable.ic_background_avatar)
+        }else{
+            // when user select image profile will show image
+            Picasso.get().load(dataSet[position].profileImage).into(viewHolder.binding.ivUserImage)
+        }
+
 
         viewHolder.initialize( viewHolder , dataSet[position] , onClick)
     }

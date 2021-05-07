@@ -34,11 +34,20 @@ class ChatFragment : Fragment() {
         binding.chatVarModel    = chatViewModel
 
         binding.tvUserName.text = usersArgs.userObject.userName
-        Picasso.get().load(usersArgs.userObject.profileImage).into(binding.ivUserImageProfile)
+
+        if( usersArgs.userObject.profileImage == ""){
+            binding.ivUserImageProfile.setImageResource(R.drawable.ic_background_avatar)
+        }else{
+            Picasso.get().load(usersArgs.userObject.profileImage).into(binding.ivUserImageProfile)
+        }
+
 
         // call fun send message
         binding.btnSendMessage.setOnClickListener {
-            chatViewModel.sendMessage( requireActivity() , usersArgs.userObject.userId , view , binding.etSendMessage , usersArgs.userObject.userName)
+            chatViewModel.sendMessage( usersArgs.userObject.userId ,
+                view ,
+                binding.etSendMessage ,
+                usersArgs.userObject.userName)
         }
 
         // show data for message form database

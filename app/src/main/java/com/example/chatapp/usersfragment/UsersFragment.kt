@@ -14,9 +14,7 @@ import com.example.chatapp.R
 import com.example.chatapp.`interface`.OnClick
 import com.example.chatapp.adapter.RecyclerUserAdapter
 import com.example.chatapp.databinding.FragmentUsersBinding
-import com.example.chatapp.firebase.FirebaseService
 import com.example.chatapp.model.UserModel
-import com.google.firebase.iid.FirebaseInstanceId
 
 @Suppress("DEPRECATION")
 class UsersFragment : Fragment() , OnClick{
@@ -37,10 +35,6 @@ class UsersFragment : Fragment() , OnClick{
         binding.lifecycleOwner  = this
         binding.usersVarModel   = usersViewModel
 
-        FirebaseService.sharadPreference = requireActivity().getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
-        FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener {
-            FirebaseService.token = it.token
-        }
 
         // get all data for user from data base
         usersViewModel.getUser(requireActivity() , binding.ivUserImageProfile )
