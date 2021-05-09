@@ -140,7 +140,7 @@
                     app:layout_constraintVertical_bias="0.112">
 
                     <Button
-                        android:id="@+id/btn_sign_up"
+                        android:id="@+id/btn_register_accpunt"
                         android:layout_width="@dimen/btn_register_page_width"
                         android:layout_height="@dimen/btn_register_page_height"
                         android:layout_margin="10dp"
@@ -149,7 +149,7 @@
                         android:textColor="@color/white"/>
 
                     <Button
-                        android:id="@+id/btn_sign_in"
+                        android:id="@+id/btn_log_in"
                         android:layout_width="@dimen/btn_register_page_width"
                         android:layout_height="@dimen/btn_register_page_height"
                         android:layout_margin="10dp"
@@ -160,6 +160,5 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

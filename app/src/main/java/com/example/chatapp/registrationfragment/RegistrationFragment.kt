@@ -27,10 +27,17 @@ class RegistrationFragment : Fragment() {
         binding.lifecycleOwner          = this
         binding.registrationVarModel    = registrationViewModel
 
-       // call register function
-        registrationViewModel.registerNewAccount(requireActivity() , view , binding.btnSignUp)
 
-        // call fun go to login page
-        registrationViewModel.goLogInPage( requireActivity() , view , binding.btnSignIn)
+        binding.btnRegisterAccpunt.setOnClickListener {
+            // call register function
+            registrationViewModel.registerNewAccount(requireActivity() , view )
+        }
+
+
+        binding.btnLogIn.setOnClickListener {
+            // call fun go to login page
+            registrationViewModel.goLogInPage( view )
+        }
+
     }
 }

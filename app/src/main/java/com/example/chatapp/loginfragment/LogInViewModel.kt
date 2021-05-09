@@ -20,35 +20,32 @@ class LogInViewModel : ViewModel(){
     private val firebaseAuth = FirebaseAuth.getInstance()
 
     // function operation for log in
-    fun logIn( context : Context , view : View , btn_log_in : Button){
+    fun logIn( context : Context , view : View){
 
         // check if user log in then navigate to user screen
 //        if( Constants.getCurrentUser() !=null){
 //            Navigation.findNavController(view).navigate(R.id.action_logInFragment_to_usersFragment)
 //        }
 
-        // button log in
-        btn_log_in.setOnClickListener {
-            // Validate input for entry data from user log in
-            if (etEnterEmail.value!!.trim().isEmpty()) {
-                Snackbar.make(view, context.getString(R.string.err_msg_please_enter_your_email), Snackbar.LENGTH_SHORT).show()
-            } else if (etEnterPassword.value!!.trim().isEmpty()) {
-                Snackbar.make(view, context.getString(R.string.err_msg_please_enter_your_password), Snackbar.LENGTH_SHORT).show()
-            } else {
+        // Validate input for entry data from user log in
+        if (etEnterEmail.value!!.trim().isEmpty()) {
+            Snackbar.make(view, context.getString(R.string.err_msg_please_enter_your_email), Snackbar.LENGTH_SHORT).show()
+        } else if (etEnterPassword.value!!.trim().isEmpty()) {
+            Snackbar.make(view, context.getString(R.string.err_msg_please_enter_your_password), Snackbar.LENGTH_SHORT).show()
+        } else {
 
-                // make authentication work with email and password register
-                firebaseAuth.signInWithEmailAndPassword(etEnterEmail.value!!, etEnterPassword.value!!).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        if (firebaseAuth.currentUser?.isEmailVerified!!) {
+            // make authentication work with email and password register
+            firebaseAuth.signInWithEmailAndPassword(etEnterEmail.value!!, etEnterPassword.value!!).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    if (firebaseAuth.currentUser?.isEmailVerified!!) {
 
-                            Snackbar.make(view, context.getString(R.string.msg_welcome_user_login), Snackbar.LENGTH_SHORT).show()
-                            Navigation.findNavController(view).navigate(R.id.action_logInFragment_to_usersFragment)
-                        } else {
-                            Snackbar.make(view, context.getText(R.string.err_msg_confirm_email), Snackbar.LENGTH_SHORT).show()
-                        }
+                        Snackbar.make(view, context.getString(R.string.msg_welcome_user_login), Snackbar.LENGTH_SHORT).show()
+                        Navigation.findNavController(view).navigate(R.id.action_logInFragment_to_usersFragment)
                     } else {
-                        Snackbar.make(view, it.exception!!.message.toString(), Snackbar.LENGTH_SHORT).show()
+                        Snackbar.make(view, context.getText(R.string.err_msg_confirm_email), Snackbar.LENGTH_SHORT).show()
                     }
+                } else {
+                    Snackbar.make(view, it.exception!!.message.toString(), Snackbar.LENGTH_SHORT).show()
                 }
             }
         }

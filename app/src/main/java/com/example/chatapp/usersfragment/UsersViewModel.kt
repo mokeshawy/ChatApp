@@ -65,11 +65,7 @@ class UsersViewModel : ViewModel(){
     }
 
     //fun go to profile page for user log in
-    fun goToProfile(view : View , iv_go_user_profile : ImageView){
-        iv_go_user_profile.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_usersFragment_to_profileFragment)
-        }
+    fun goToProfile(view : View ){
+        Navigation.findNavController(view).navigate(R.id.action_usersFragment_to_profileFragment)
     }
-
-
 }

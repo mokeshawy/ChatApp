@@ -52,8 +52,11 @@ class ProfileFragment : Fragment() {
             profileViewModel.uploadImageProfile(imageUri)
         }
 
-        // back to users page
-        profileViewModel.backToUserPage(view , binding.ivBtnBack)
+        binding.ivBtnBack.setOnClickListener {
+            // back to users page
+            profileViewModel.backToUserPage(view)
+        }
+
 
         // select image
         binding.ivUserImage.setOnClickListener {

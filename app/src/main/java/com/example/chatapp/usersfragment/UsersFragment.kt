@@ -43,7 +43,10 @@ class UsersFragment : Fragment() , OnClick{
         })
 
         // fun go to profile page
-        usersViewModel.goToProfile(view , binding.ivUserImageProfile)
+        binding.ivUserImageProfile.setOnClickListener {
+            usersViewModel.goToProfile(view)
+        }
+
     }
 
     override fun onClick( viewHolder: RecyclerUserAdapter.ViewHolder, dataSet: UserModel, position: Int ) {

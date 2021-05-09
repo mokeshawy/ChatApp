@@ -27,8 +27,11 @@ class LogInFragment : Fragment() {
         binding.lifecycleOwner  = this
         binding.logInVarModel   = logInViewModel
 
-        // fun log in user
-        logInViewModel.logIn(requireActivity() , view , binding.btnSignIn)
+        binding.btnLogIn.setOnClickListener {
+            // fun log in user
+            logInViewModel.logIn(requireActivity() , view)
+        }
+
 
         // fun go register page
         logInViewModel.goRegisterPage(view , binding.tvRegisterNewAccount)

@@ -79,9 +79,7 @@ class ProfileViewModel : ViewModel(){
         }
     }
 
-    fun backToUserPage(view : View, iv_btn_back : ImageView){
-        iv_btn_back.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_profileFragment_to_usersFragment)
-        }
+    fun backToUserPage(view : View){
+        Navigation.findNavController(view).navigate(R.id.action_profileFragment_to_usersFragment)
     }
 }

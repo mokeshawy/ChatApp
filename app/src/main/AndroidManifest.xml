@@ -15,14 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatApp">
 
-        <service android:name=".firebase.FirebaseService"
-            android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            </intent-filter>
-        </service>
-
         <activity android:name=".activits.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"
