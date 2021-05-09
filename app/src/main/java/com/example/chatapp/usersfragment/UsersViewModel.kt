@@ -8,7 +8,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.chatapp.R
-import com.example.chatapp.firebase.FirebaseService
 import com.example.chatapp.model.UserModel
 import com.example.chatapp.util.Constants
 import com.google.firebase.database.DataSnapshot
